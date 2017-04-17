@@ -43,4 +43,93 @@
     
   </entry>
   
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2017/04/10/gytx-%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/"/>
+    <id>http://yoursite.com/2017/04/10/gytx-后台管理/</id>
+    <published>2017-04-10T01:20:08.000Z</published>
+    <updated>2017-04-17T02:11:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="2-5迭代"><a href="#2-5迭代" class="headerlink" title="2.5迭代"></a>2.5迭代</h2><ul>
+<li><p>api serverIp 外部注入 ok</p>
+</li>
+<li><p>大咖观点提示可编辑高亮文本，并高亮显示 ok</p>
+</li>
+<li><p>老师的观点和评论 提示  <strong> ## </strong>  ok</p>
+</li>
+<li><p>大咖盯盘 &gt; 快速审核评论列表</p>
+<ul>
+<li>拉评论列表 及 分页 ok</li>
+<li>更改评论状态 ok</li>
+</ul>
+</li>
+<li><p>大咖盯盘推送添加推送标题，副标题和封面</p>
+<ul>
+<li>样式 ok</li>
+<li>api调试 ok</li>
+</ul>
+</li>
+<li><p>回复首个tab优化</p>
+<ul>
+<li>被关注回复／自动回复 ok</li>
+<li>关键词回复 ok</li>
+</ul>
+</li>
+<li><p>文章添加 可编辑阅读量 功能 ok</p>
+</li>
+<li><p>财富学堂和股银配置 添加 可编辑阅读量 功能 ok</p>
+</li>
+<li><p>评论 换行 显示</p>
+</li>
+<li><p>Fixbug:</p>
+<ul>
+<li>快速评论 时间倒序</li>
+</ul>
+<p>​</p>
+</li>
+</ul>
+<h2 id="2-6迭代"><a href="#2-6迭代" class="headerlink" title="2.6迭代"></a>2.6迭代</h2><h3 id="签到"><a href="#签到" class="headerlink" title="签到"></a>签到</h3><ul>
+<li><p>视频</p>
+<ul>
+<li>样式： 兑换人数基数，价格，标题，副标题，封面，视频地址</li>
+<li>分页</li>
+<li>增删改</li>
+<li>观点展开</li>
+</ul>
+</li>
+<li><p>报告</p>
+<ul>
+<li><p>样式： 兑换人数基数，价格，标题，副标题，封面，视频地址</p>
+</li>
+<li><p>分页</p>
+</li>
+<li><p>增删改</p>
+</li>
+<li><p>观点展开</p>
+<p>​</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="投顾区分"><a href="#投顾区分" class="headerlink" title="投顾区分"></a>投顾区分</h3><ul>
+<li>列表展示：真实姓名，昵称</li>
+<li>分页</li>
+<li>扫描加入投顾</li>
+<li>搜索功能</li>
+<li>移除投顾功能</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;2-5迭代&quot;&gt;&lt;a href=&quot;#2-5迭代&quot; class=&quot;headerlink&quot; title=&quot;2.5迭代&quot;&gt;&lt;/a&gt;2.5迭代&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;api serverIp 外部注入 ok&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;大咖观点提示可编辑高亮
+    
+    </summary>
+    
+    
+  </entry>
+  
 </feed>
