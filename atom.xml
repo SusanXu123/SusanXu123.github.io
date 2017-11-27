@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-16T05:24:26.000Z</updated>
+  <updated>2017-11-27T12:25:46.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决阿里云服务slb解析域名错误问题</title>
+    <link href="http://yoursite.com/2017/11/27/%E8%A7%A3%E5%86%B3%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1slb%E8%A7%A3%E6%9E%90%E5%9F%9F%E5%90%8D%E9%94%99%E8%AF%AF%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2017/11/27/解决阿里云服务slb解析域名错误问题/</id>
+    <published>2017-11-27T12:07:02.000Z</published>
+    <updated>2017-11-27T12:25:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>问题描述：在阿里云上用docker swarm部署了两个服务 serviceA 和 serviceB 后，出现访问 serviceA 服务时路由到 serviceB 的情况，及访问serviceA/ping 返回的是’ping from serviceB’, 其中serviceA是使用 nginx 代理了一层的服务， serviceB是直接用node 起的服务。<br>serviceA yml<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="attr">networks:</span></div><div class="line"><span class="attr">  test-net:</span></div><div class="line"><span class="attr">    external:</span> <span class="literal">true</span></div><div class="line"><span class="attr">services:</span></div><div class="line"><span class="attr">  app1:</span></div><div class="line"><span class="attr">    deploy:</span></div><div class="line"><span class="attr">      mode:</span> <span class="string">replicated</span></div><div class="line"><span class="attr">      replicas:</span> <span class="number">1</span></div><div class="line"><span class="attr">      restart_policy:</span></div><div class="line"><span class="attr">        condition:</span> <span class="string">any</span></div><div class="line"><span class="attr">      update_config:</span></div><div class="line"><span class="attr">        failure_action:</span> <span class="string">rollback</span></div><div class="line"><span class="attr">    image:</span> <span class="string">registry-internal.cn-shanghai.aliyuncs.com/test/serviceA:latest</span></div><div class="line"><span class="attr">    networks:</span></div><div class="line"><span class="bullet">    -</span> <span class="string">test-net</span></div><div class="line"><span class="attr">  nginx:</span></div><div class="line"><span class="attr">    image:</span> <span class="string">registry-internal.cn-shanghai.aliyuncs.com/test/nginx-ervice:latest</span></div><div class="line"><span class="attr">    labels:</span></div><div class="line">      <span class="string">aliyun.routing.port_80:</span> <span class="string">serviceA.com</span></div><div class="line"><span class="attr">    networks:</span></div><div class="line"><span class="attr">      paprika-net:</span></div><div class="line"><span class="attr">        aliases:</span></div><div class="line"><span class="bullet">        -</span> <span class="string">serviceA.com</span></div><div class="line"><span class="attr">    ports:</span></div><div class="line"><span class="bullet">    -</span> <span class="number">80</span><span class="string">/tcp</span></div><div class="line"><span class="attr">version:</span> <span class="string">"3.2"</span></div></pre></td></tr></table></figure></p>
+<p>serviceB yml<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="attr">networks:</span></div><div class="line"><span class="attr">  test-net:</span></div><div class="line"><span class="attr">    external:</span> <span class="literal">true</span></div><div class="line"><span class="attr">services:</span></div><div class="line"><span class="attr">  nginx:</span></div><div class="line"><span class="attr">    deploy:</span></div><div class="line"><span class="attr">      mode:</span> <span class="string">replicated</span></div><div class="line"><span class="attr">      replicas:</span> <span class="number">1</span></div><div class="line"><span class="attr">      restart_policy:</span></div><div class="line"><span class="attr">        condition:</span> <span class="string">any</span></div><div class="line"><span class="attr">      update_config:</span></div><div class="line"><span class="attr">        failure_action:</span> <span class="string">rollback</span></div><div class="line"><span class="attr">    image:</span> <span class="string">registry-internal.cn-shanghai.aliyuncs.com/test/serviceB:latest</span></div><div class="line"><span class="attr">    labels:</span></div><div class="line">      <span class="string">aliyun.routing.port_80:</span> <span class="string">serviceB.com</span></div><div class="line"><span class="attr">    networks:</span></div><div class="line"><span class="attr">      test-net:</span></div><div class="line"><span class="attr">        aliases:</span></div><div class="line"><span class="bullet">        -</span> <span class="string">serviceB.com</span></div><div class="line"><span class="attr">    ports:</span></div><div class="line"><span class="bullet">    -</span> <span class="number">80</span><span class="string">/tcp</span></div><div class="line"><span class="attr">version:</span> <span class="string">"3.2"</span></div></pre></td></tr></table></figure></p>
+<p>解决过程：<br>1.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;问题描述：在阿里云上用docker swarm部署了两个服务 serviceA 和 serviceB 后，出现访问 serviceA 服务时路由到 serviceB 的情况，及访问serviceA/ping 返回的是’ping from serviceB’, 其中servi
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
