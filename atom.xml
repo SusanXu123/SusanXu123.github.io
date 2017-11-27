@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-27T13:20:00.000Z</updated>
+  <updated>2017-11-27T13:23:20.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/11/27/solve-question-of-aliyun/"/>
     <id>http://yoursite.com/2017/11/27/solve-question-of-aliyun/</id>
     <published>2017-11-27T12:07:02.000Z</published>
-    <updated>2017-11-27T13:20:00.000Z</updated>
+    <updated>2017-11-27T13:23:20.000Z</updated>
     
     <content type="html"><![CDATA[<p>问题描述：在阿里云上用docker swarm部署了两个服务 serviceA 和 serviceB 后，出现访问 serviceA 服务时路由到 serviceB 的情况，即访问serviceA/ping 返回的是’ping from serviceB’, 其中serviceA是使用 nginx 代理了一层的服务， serviceB是直接用node 起的服务。</p>
 <p>serviceA nginx 代理配置<br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">upstream backend &#123;</div><div class="line">        server app1:3000;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
@@ -36,7 +36,7 @@
 <p>serviceB重新部署完成后再次连续访问 <a href="http://serviceA.com/ping，" target="_blank" rel="external">http://serviceA.com/ping，</a> 发现仍然有一半路由到 serviceB中</p>
 <h4 id="4-重启serviceA-的-nginx-服务的-nginx"><a href="#4-重启serviceA-的-nginx-服务的-nginx" class="headerlink" title="4. 重启serviceA 的 nginx 服务的 nginx"></a>4. 重启serviceA 的 nginx 服务的 nginx</h4><p>通过ssh登录进serviceA 的 nginx 服务所在的机器，终端进入 nginx 容器内, 重启nginx<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service nginx restart</div></pre></td></tr></table></figure></p>
 <p>连续多次访问 <a href="http://serviceA.com/ping，发现问题解决" target="_blank" rel="external">http://serviceA.com/ping，发现问题解决</a></p>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>因为serviceB服务和serviceA的2个服务都在 test-net 网络下，serviceA的nginx 服务是代理到它的app1服务，而serviceB服务也叫app1服务，nginx 无法区分serviceA的app1服务和serviceB服务，所以首次代理的时候会记住两个服务的Id并对他们均进行反向代理，之后虽然我们修改了serviceB服务的 service name, 但是因为 服务是代理到它的app1服务，而serviceB服务也叫app1服务，nginx 服务记住的是 container id, 所以不会重新代理，在重启nginx 后，nginx 会重新去找app1服务，所以就不会再代理错误</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>因为serviceB服务和serviceA的2个服务都在 test-net 网络下，serviceA的nginx 服务是代理到它的app1服务，而serviceB服务也叫app1服务，nginx 无法区分serviceA的app1服务和serviceB服务，所以首次代理的时候会记住两个服务的Id并对他们均进行反向代理，之后虽然我们修改了serviceB服务的 service name, 但是因为 nginx 服务是在首次代理后记住他们的containerId, 之后是按照containerId查找服务的，所以任何会反向代理到serviceB服务上，<br>而在重启nginx 后，nginx 会重新去找app1服务的containerId，所以就不会再代理错误</p>
 ]]></content>
     
     <summary type="html">
