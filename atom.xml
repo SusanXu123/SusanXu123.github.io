@@ -50,7 +50,7 @@
     <link href="http://yoursite.com/2017/12/18/electron-vue/"/>
     <id>http://yoursite.com/2017/12/18/electron-vue/</id>
     <published>2017-12-18T09:04:18.000Z</published>
-    <updated>2017-12-21T01:56:48.000Z</updated>
+    <updated>2017-12-21T01:57:59.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="参考文档："><a href="#参考文档：" class="headerlink" title="参考文档："></a>参考文档：</h3><ol>
 <li>electron中文网：<a href="https://electron.org.cn/vue/index.html" target="_blank" rel="noopener">https://electron.org.cn/vue/index.html</a> <br><br>2.mac环境，利用builder构建electron+vue的demo: <a href="https://newsn.net/say/electron-vue-demo-mac-builder.html" target="_blank" rel="noopener">https://newsn.net/say/electron-vue-demo-mac-builder.html</a></li>
@@ -151,6 +151,57 @@
   </entry>
   
   <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2017/04/16/hello-world/"/>
+    <id>http://yoursite.com/2017/04/16/hello-world/</id>
+    <published>2017-04-16T05:04:40.000Z</published>
+    <updated>2017-12-20T05:41:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>dasd</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>深入浅出node.js 学习笔记</title>
+    <link href="http://yoursite.com/2017/04/16/node-study-note/"/>
+    <id>http://yoursite.com/2017/04/16/node-study-note/</id>
+    <published>2017-04-16T05:04:40.000Z</published>
+    <updated>2017-12-11T01:57:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一-简介"><a href="#一-简介" class="headerlink" title="一. 简介"></a>一. 简介</h2><p>  作者: Ryan Dahl（c/c++程序员）<br><br>  最初目标： 写一个事件驱动，非阻塞的I/O<br><br>  特点：单线程，异步I/O，回调函数<br><br>  应用场景：I/O密集型的应用场景<br><br>  优点：并行I/O</p>
+<h2 id="二-模块机制"><a href="#二-模块机制" class="headerlink" title="二.模块机制"></a>二.模块机制</h2><h3 id="1-CommonJs规范"><a href="#1-CommonJs规范" class="headerlink" title="1. CommonJs规范"></a>1. CommonJs规范</h3><p>CommonJs对模块的定义，主要分为模块引用，模块定义，模块标识3部分</p>
+<ol>
+<li>模块引用<br><br>存在require()方法，这个方法</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;一-简介&quot;&gt;&lt;a href=&quot;#一-简介&quot; class=&quot;headerlink&quot; title=&quot;一. 简介&quot;&gt;&lt;/a&gt;一. 简介&lt;/h2&gt;&lt;p&gt;  作者: Ryan Dahl（c/c++程序员）&lt;br&gt;&lt;br&gt;  最初目标： 写一个事件驱动，非阻塞的I/O&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>起一个服务进行两个不同的微信公众号之间的素材迁移</title>
     <link href="http://yoursite.com/2017/04/16/sync-wechat/"/>
     <id>http://yoursite.com/2017/04/16/sync-wechat/</id>
@@ -201,57 +252,6 @@
       &lt;h3 id=&quot;1-所需依赖&quot;&gt;&lt;a href=&quot;#1-所需依赖&quot; class=&quot;headerlink&quot; title=&quot;1. 所需依赖&quot;&gt;&lt;/a&gt;1. 所需依赖&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;redis  &lt;/p&gt;
 &lt;p&gt;文档：&lt;a href=&quot;http://redis.js.
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>深入浅出node.js 学习笔记</title>
-    <link href="http://yoursite.com/2017/04/16/node-study-note/"/>
-    <id>http://yoursite.com/2017/04/16/node-study-note/</id>
-    <published>2017-04-16T05:04:40.000Z</published>
-    <updated>2017-12-11T01:57:16.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="一-简介"><a href="#一-简介" class="headerlink" title="一. 简介"></a>一. 简介</h2><p>  作者: Ryan Dahl（c/c++程序员）<br><br>  最初目标： 写一个事件驱动，非阻塞的I/O<br><br>  特点：单线程，异步I/O，回调函数<br><br>  应用场景：I/O密集型的应用场景<br><br>  优点：并行I/O</p>
-<h2 id="二-模块机制"><a href="#二-模块机制" class="headerlink" title="二.模块机制"></a>二.模块机制</h2><h3 id="1-CommonJs规范"><a href="#1-CommonJs规范" class="headerlink" title="1. CommonJs规范"></a>1. CommonJs规范</h3><p>CommonJs对模块的定义，主要分为模块引用，模块定义，模块标识3部分</p>
-<ol>
-<li>模块引用<br><br>存在require()方法，这个方法</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;一-简介&quot;&gt;&lt;a href=&quot;#一-简介&quot; class=&quot;headerlink&quot; title=&quot;一. 简介&quot;&gt;&lt;/a&gt;一. 简介&lt;/h2&gt;&lt;p&gt;  作者: Ryan Dahl（c/c++程序员）&lt;br&gt;&lt;br&gt;  最初目标： 写一个事件驱动，非阻塞的I/O&lt;br&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2017/04/16/hello-world/"/>
-    <id>http://yoursite.com/2017/04/16/hello-world/</id>
-    <published>2017-04-16T05:04:40.000Z</published>
-    <updated>2017-12-20T05:41:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<p>dasd</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
     
     </summary>
     
